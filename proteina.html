@@ -81,17 +81,17 @@
     <main>
         <article>
             <h2>Proteína Whey</h2>
-            <img src="wheyprof.png" alt="Logo de NUTRIPRO">
+            <img src="wheyprof.png" id="product-image" alt="Imagen del producto">
             <p>100% WHEY PROFESSIONAL. Ideal para la recuperación muscular y el aumento de masa.</p>
             <div class="product-selector">
                 <label for="size-select">Elegir tamaño:</label>
-                <select id="size-select" onchange="updatePrice(this.value)">
+                <select id="size-select" onchange="updateProduct(this.value)">
                     <option value="0">Selecciona una opción</option>
-                    <option value="170">500gr - 170bs</option>
-                    <option value="330">920gr - 330bs</option>
-                    <option value="310">1000gr - 310bs</option>
-                    <option value="630">2350gr - 630bs</option>
-                    <option value="1200">5000gr - 1200bs</option>
+                    <option value="170|wyp500.png">500gr - 170bs</option>
+                    <option value="330|wyp920.png">920gr - 330bs</option>
+                    <option value="310|wyp1000.png">1000gr - 310bs</option>
+                    <option value="630|wyp2350.png">2350gr - 630bs</option>
+                    <option value="1200|wyp5000.png">5000gr - 1200bs</option>
                 </select>
                 <p id="price-display">Precio: </p>
             </div>
@@ -102,8 +102,10 @@
         <p>© 2024 NUTRIPRO. Todos los derechos reservados.</p>
     </footer>
     <script>
-        function updatePrice(price) {
+        function updateProduct(value) {
+            const [price, image] = value.split('|');
             document.getElementById('price-display').innerText = 'Precio: ' + price + 'bs';
+            document.getElementById('product-image').src = image;
         }
     </script>
 </body>
