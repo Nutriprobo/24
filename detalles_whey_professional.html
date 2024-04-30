@@ -20,32 +20,37 @@
         main {
             padding: 20px;
             margin: 10px 30px;
-            display: flex;
-            flex-direction: column;
-            align-items: center;
         }
         img {
             max-width: 200px;
             height: auto;
             display: block;
-            margin-bottom: 20px;
-        }
-        .price-list {
-            list-style: none;
-            padding: 0;
-            width: 100%;
-            text-align: center;
-        }
-        .price-list li {
-            margin: 10px 0;
-            border-bottom: 1px solid #ddd;
-            padding: 10px;
+            margin: 0 auto;
         }
         .product-info {
-            display: flex;
-            align-items: center;
-            justify-content: space-between;
+            text-align: center;
+        }
+        .product-selector label, .product-selector select {
+            font-size: 16px;
+            padding: 5px 10px;
+            margin: 5px;
+        }
+        button {
+            margin-top: 10px;
+            background-color: #0275d8;
+            color: white;
+            border: none;
+            cursor: pointer;
+            padding: 10px 20px;
+            display: block;
             width: 100%;
+        }
+        #whatsapp-button {
+            background-color: #25D366; /* Color verde de WhatsApp */
+            margin-top: 5px;
+        }
+        button:hover {
+            opacity: 0.8;
         }
     </style>
 </head>
@@ -55,28 +60,40 @@
     </header>
     <main>
         <div class="product-info">
-            <img src="wyp500.PNG" alt="100% Whey Professional 500g">
-            <p>500gr - 170bs</p>
-        </div>
-        <div class="product-info">
-            <img src="wyp920.PNG" alt="100% Whey Professional 920g">
-            <p>920gr - 330bs</p>
-        </div>
-        <div class="product-info">
-            <img src="wyp1000.PNG" alt="100% Whey Professional 1000g">
-            <p>1000gr - 310bs</p>
-        </div>
-        <div class="product-info">
-            <img src="wyp2350.PNG" alt="100% Whey Professional 2350g">
-            <p>2350gr - 630bs</p>
-        </div>
-        <div class="product-info">
-            <img src="wyp5000.PNG" alt="100% Whey Professional 5000g">
-            <p>5000gr - 1200bs</p>
+            <img src="wyp2350.PNG" id="product-image" alt="100% Whey Professional">
+            <div class="product-selector">
+                <label for="size-select">Elegir tamaño:</label>
+                <select id="size-select" onchange="updateProduct(this)">
+                    <option value="500|170|wyp500.PNG">500gr - 170bs</option>
+                    <option value="920|330|wyp920.PNG">920gr - 330bs</option>
+                    <option value="1000|310|wyp1000.PNG">1000gr - 310bs</option>
+                    <option value="2350|630|wyp2350.PNG">2350gr - 630bs</option>
+                    <option value="5000|1200|wyp5000.PNG">5000gr - 1200bs</option>
+                </select>
+                <button onclick="addToCart()">Añadir al carrito</button>
+                <button id="whatsapp-button" onclick="sendWhatsAppOrder()">Pedir por WhatsApp</button>
+            </div>
         </div>
     </main>
     <footer>
         <p>© 2024 NUTRIPRO. Todos los derechos reservados.</p>
     </footer>
+    <script>
+        function updateProduct(select) {
+            const [size, price, image] = select.value.split('|');
+            document.getElementById('product-image').src = image;
+            document.getElementById('whatsapp-button').setAttribute('data-message', `Quiero el producto 100% WHEY PROFESSIONAL, Tamaño: ${size}, Precio: ${price}bs`);
+        }
+
+        function addToCart() {
+            alert('Producto añadido al carrito');
+        }
+
+        function sendWhatsAppOrder() {
+            const message = document.getElementById('whatsapp-button').getAttribute('data-message');
+            const whatsappUrl = `https://wa.me/59172645173?text=${encodeURIComponent(message)}`;
+            window.open(whatsappUrl, '_blank');
+        }
+    </script>
 </body>
 </html>
