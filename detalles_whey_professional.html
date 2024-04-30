@@ -8,20 +8,36 @@
         body {
             font-family: 'Arial', sans-serif;
             margin: 0;
-            background: linear-gradient(to right, #6a11cb, #2575fc); /* Degradado hermoso */
-            color: #fff; /* Texto blanco para mejor contraste */
+            background: linear-gradient(to right, #6a11cb, #2575fc);
+            color: #fff;
         }
-        header, footer {
-            background-color: rgba(2, 117, 216, 0.8); /* Ligeramente transparente */
+        header {
+            background-color: rgba(2, 117, 216, 0.8);
             color: white;
             padding: 10px 20px;
             text-align: center;
+            position: relative; /* Para posicionar los botones de navegación */
+        }
+        header a {
+            color: white;
+            text-decoration: none;
+            padding: 8px 15px;
+            background-color: #025aa5;
+            border-radius: 5px;
+            position: absolute;
+            top: 10px;
+        }
+        header a.back-button {
+            left: 10px;
+        }
+        header a.home-button {
+            right: 10px;
         }
         main {
             padding: 20px;
             margin: 10px 30px;
-            background-color: rgba(255, 255, 255, 0.8); /* Fondo semi-transparente para el contenido */
-            border-radius: 8px; /* Bordes redondeados para el contenido */
+            background-color: rgba(255, 255, 255, 0.8);
+            border-radius: 8px;
         }
         img {
             max-width: 200px;
@@ -36,7 +52,7 @@
             font-size: 16px;
             padding: 5px 10px;
             margin: 5px;
-            background-color: #f8f9fa; /* Fondo claro para los elementos de formulario */
+            background-color: #f8f9fa;
             border-radius: 5px;
             border: 1px solid #ccc;
         }
@@ -51,10 +67,6 @@
             width: 100%;
             border-radius: 5px;
         }
-        #whatsapp-button {
-            background-color: #25D366; /* Color verde de WhatsApp */
-            margin-top: 5px;
-        }
         button:hover {
             opacity: 0.8;
         }
@@ -62,6 +74,8 @@
 </head>
 <body>
     <header>
+        <a href="preteina.html" class="home-button">proteina</a>
+        <a href="indice.html" class="home-button">Inicio</a>
         <h1>100% WHEY PROFESSIONAL</h1>
     </header>
     <main>
