@@ -8,11 +8,11 @@
         body {
             font-family: 'Arial', sans-serif;
             margin: 0;
-            background-color: #f4f4f4; /* Fondo suave para la página */
-            color: #333; /* Color de texto principal */
+            background-color: #f4f4f4;
+            color: #333;
         }
         header {
-            background-color: #0275d8; /* Azul vibrante para el encabezado */
+            background-color: #0275d8;
             color: white;
             padding: 10px 20px;
             text-align: center;
@@ -22,7 +22,7 @@
             padding: 0;
         }
         nav ul li {
-            display: inline; /* Hace que el elemento de lista sea en línea */
+            display: inline;
         }
         nav ul li a {
             color: white;
@@ -31,19 +31,19 @@
             display: inline-block;
         }
         nav ul li a:hover {
-            background-color: #025aa5; /* Azul más oscuro para el hover */
+            background-color: #025aa5;
         }
         main {
             padding: 20px;
             background: white;
-            margin: 10px 30px; /* Margen alrededor del contenido principal */
-            box-shadow: 0 2px 5px rgba(0,0,0,0.1); /* Sombra ligera para dar profundidad */
+            margin: 10px 30px;
+            box-shadow: 0 2px 5px rgba(0,0,0,0.1);
         }
         article {
             margin-bottom: 20px;
             padding: 20px;
-            background-color: #ffffff; /* Fondo blanco para los artículos */
-            border-left: 5px solid #0275d8; /* Barra lateral decorativa */
+            background-color: #ffffff;
+            border-left: 5px solid #0275d8;
         }
         footer {
             text-align: center;
@@ -55,10 +55,17 @@
             width: 100%;
         }
         img {
-            max-width: 100%; /* Hace que las imágenes sean responsivas */
+            max-width: 100%;
             height: auto;
             display: block;
-            margin: 0 auto 10px; /* Centra la imagen y añade espacio abajo */
+            margin: 0 auto 10px;
+        }
+        .product-selector {
+            margin-top: 20px;
+        }
+        .product-selector label, .product-selector select {
+            font-size: 16px;
+            padding: 5px 10px;
         }
     </style>
 </head>
@@ -74,20 +81,30 @@
     <main>
         <article>
             <h2>Proteína Whey</h2>
-            <img src="wheyprof.png" alt="Logo de NUTRIPRObo">
-            <p>100% WHEY PROFESSIONAL 1. Ideal para la recuperación muscular y el aumento de masa.</p>
-            <p>Precio: $20.00</p>
-        </article>
-        <article>
-            <h2>Proteína de Caseína</h2>
-            <img src="images/caseina.jpg" alt="Proteína de Caseína" width="200">
-            <p>Descripción del producto 2. Perfecta para tomar antes de dormir y evitar el catabolismo nocturno.</p>
-            <p>Precio: $25.00</p>
+            <img src="wheyprof.png" alt="Logo de NUTRIPRO">
+            <p>100% WHEY PROFESSIONAL. Ideal para la recuperación muscular y el aumento de masa.</p>
+            <div class="product-selector">
+                <label for="size-select">Elegir tamaño:</label>
+                <select id="size-select" onchange="updatePrice(this.value)">
+                    <option value="0">Selecciona una opción</option>
+                    <option value="170">500gr - 170bs</option>
+                    <option value="330">920gr - 330bs</option>
+                    <option value="310">1000gr - 310bs</option>
+                    <option value="630">2350gr - 630bs</option>
+                    <option value="1200">5000gr - 1200bs</option>
+                </select>
+                <p id="price-display">Precio: </p>
+            </div>
         </article>
         <!-- Añadir más productos según sea necesario -->
     </main>
     <footer>
         <p>© 2024 NUTRIPRO. Todos los derechos reservados.</p>
     </footer>
+    <script>
+        function updatePrice(price) {
+            document.getElementById('price-display').innerText = 'Precio: ' + price + 'bs';
+        }
+    </script>
 </body>
 </html>
