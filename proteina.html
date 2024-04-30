@@ -115,12 +115,14 @@
     </footer>
     <script>
         let selectedProduct = "";
+        let selectedImage = "";
 
         function updateProduct(value) {
             const [price, image] = value.split('|');
             document.getElementById('price-display').innerText = 'Precio: ' + price + 'bs';
             document.getElementById('product-image').src = image;
             selectedProduct = document.querySelector('#size-select option:checked').textContent;
+            selectedImage = image;
             document.getElementById('whatsapp-button').style.display = 'block';
         }
 
@@ -129,7 +131,7 @@
         }
 
         function sendWhatsAppOrder() {
-            const message = encodeURIComponent(`Hola, quiero este producto: ${selectedProduct}`);
+            const message = encodeURIComponent(`Hola, quiero este producto: ${selectedProduct}. Aquí está la imagen: ${window.location.origin}/${selectedImage}`);
             const whatsappUrl = `https://wa.me/59172645173?text=${message}`;
             window.open(whatsappUrl, '_blank');
         }
