@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>NUTRIPRO</title>
+    <title></title>
     <style>
         body {
             font-family: 'Arial', sans-serif;
@@ -16,6 +16,10 @@
             color: white;
             padding: 10px 20px;
             text-align: center;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            flex-direction: column;
         }
         nav ul {
             list-style-type: none;
@@ -53,7 +57,9 @@
             width: 100%;
         }
         img.logo {
-            height: 50px; /* Ajusta esto según el tamaño deseado para tu logo */
+            max-width: 100%; /* Hacer que la imagen del logo se ajuste automáticamente al tamaño del contenedor */
+            max-height: 100px; /* Ajusta esto según el tamaño deseado para tu logo */
+            margin-bottom: 10px; /* Añadir margen inferior para separar el logo del título */
         }
     </style>
 </head>
