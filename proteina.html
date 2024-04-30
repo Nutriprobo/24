@@ -17,48 +17,22 @@
             padding: 10px 20px;
             text-align: center;
         }
-        nav ul {
-            list-style-type: none;
-            padding: 0;
-        }
-        nav ul li {
-            display: inline;
-        }
-        nav ul li a {
-            color: white;
-            text-decoration: none;
-            padding: 10px 20px;
-            display: inline-block;
-        }
-        nav ul li a:hover {
-            background-color: #025aa5;
-        }
         main {
             padding: 20px;
             background: white;
             margin: 10px 30px;
             box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: space-around;
         }
         article {
             margin-bottom: 20px;
             padding: 20px;
             background-color: #ffffff;
             border-left: 5px solid #0275d8;
-        }
-        footer {
-            text-align: center;
-            padding: 10px 0;
-            background-color: #333;
-            color: white;
-            position: fixed;
-            bottom: 0;
-            width: 100%;
-        }
-        img {
-            max-width: 100%;
-            height: auto;
-            display: block;
-            margin: 0 auto 10px;
+            width: 30%;
+            box-sizing: border-box;
         }
         .product-selector {
             margin-top: 20px;
@@ -69,36 +43,38 @@
         }
         button {
             margin-top: 10px;
-            margin-right: 5px;
             background-color: #0275d8;
             color: white;
             border: none;
             cursor: pointer;
-        }
-        #whatsapp-button {
-            background-color: #25D366; /* Color verde de WhatsApp */
+            display: block;
         }
         button:hover {
             opacity: 0.8;
+        }
+        footer {
+            text-align: center;
+            padding: 10px 0;
+            background-color: #333;
+            color: white;
+            position: fixed;
+            bottom: 0;
+            width: 100%;
         }
     </style>
 </head>
 <body>
     <header>
-        <h1>Proteína</h1>
-        <nav>
-            <ul>
-                <li><a href="index.html">Inicio</a></li>
-            </ul>
-        </nav>
+        <h1>Catálogo de Proteínas</h1>
     </header>
     <main>
+        <!-- ISO TRIPLE ZERO -->
         <article>
-            <h2>Proteína Whey</h2>
-            <img src="wyp2350.PNG" id="product-image" alt="Imagen del producto">
-            <p>100% WHEY PROFESSIONAL. Óptimo para potenciar la recuperación muscular y promover el crecimiento de masa magra.</p>
+            <h2>100% WHEY PROFESSIONAL</h2>
+             <img src="wyp2350.PNG" id="product-image" alt="Imagen del producto">
+             <p>100% WHEY PROFESSIONAL. Óptimo para potenciar la recuperación muscular y promover el crecimiento de masa magra.</p>
             <div class="product-selector">
-                <label for="size-select">Elegir tamaño:</label>
+                <label for="size-select-iso-triple-zero">Elegir tamaño:</label>
                 <select id="size-select" onchange="updateProduct(this.value)">
                     <option value="0">Selecciona una opción</option>
                     <option value="170|wyp500.PNG">500gr - 170bs</option>
@@ -107,39 +83,121 @@
                     <option value="630|wyp2350.PNG">2350gr - 630bs</option>
                     <option value="1200|wyp5000.PNG">5000gr - 1200bs</option>
                 </select>
-                <button onclick="addToCart()">Añadir al carrito</button>
-                <button id="whatsapp-button" style="display:none;" onclick="sendWhatsAppOrder()">Pedido WhatsApp</button>
-                <p id="price-display">Precio: </p>
+                <button onclick="addToCart('100% WHEY PROFESSIONAL', sizeSelectIsoTripleZero.value)">Añadir al carrito</button>
             </div>
         </article>
-        <!-- Añadir más productos según sea necesario -->
+        <!-- Whey 100% Pure -->
+        <article>
+            <h2>Whey 100% Pure</h2>
+            <div class="product-selector">
+                <label for="size-select-whey-pure">Elegir tamaño:</label>
+                <select id="size-select-whey-pure">
+                    <option value="280">900gr - 280bs</option>
+                    <option value="410">1.8kg - 410bs</option>
+                    <option value="210">450gr - 210bs</option>
+                </select>
+                <button onclick="addToCart('Whey 100% Pure', sizeSelectWheyPure.value)">Añadir al carrito</button>
+            </div>
+        </article>
+        <!-- ISO TRIPLE ZERO -->
+        <article>
+            <h2>ISO TRIPLE ZERO</h2>
+            <div class="product-selector">
+                <label for="size-select-iso-triple-zero">Elegir tamaño:</label>
+                <select id="size-select-iso-triple-zero">
+                    <option value="320">900gr - 320bs</option>
+                    <option value="550">1.8kg - 550bs</option>
+                </select>
+                <button onclick="addToCart('ISO TRIPLE ZERO', sizeSelectIsoTripleZero.value)">Añadir al carrito</button>
+            </div>
+        </article>
+        <!-- WHEY 100% ISOLATE -->
+        <article>
+            <h2>WHEY 100% ISOLATE</h2>
+            <div class="product-selector">
+                <label for="size-select-whey-100-isolate">Elegir tamaño:</label>
+                <select id="size-select-whey-100-isolate">
+                    <option value="350">700gr - 350bs</option>
+                    <option value="710">2000gr - 710bs</option>
+                </select>
+                <button onclick="addToCart('WHEY 100% ISOLATE', sizeSelectWhey100Isolate.value)">Añadir al carrito</button>
+            </div>
+        </article>
+        <!-- Nutri Whey Protein -->
+        <article>
+            <h2>Nutri Whey Protein</h2>
+            <div class="product-selector">
+                <label for="size-select-nutri-whey-protein">Elegir tamaño:</label>
+                <select id="size-select-nutri-whey-protein">
+                    <option value="170">900gr - 170bs</option>
+                </select>
+                <button onclick="addToCart('Nutri Whey Protein', sizeSelectNutriWheyProtein.value)">Añadir al carrito</button>
+            </div>
+        </article>
+        <!-- ANABOLICO ISO + HYDRO -->
+        <article>
+            <h2>ANABOLICO ISO + HYDRO</h2>
+            <div class="product-selector">
+                <label for="size-select-anabolico-iso-hydro">Elegir tamaño:</label>
+                <select id="size-select-anabolico-iso-hydro">
+                    <option value="720">2350gr - 720bs</option>
+                    <option value="360">920gr - 360bs</option>
+                </select>
+                <button onclick="addToCart('ANABOLICO ISO + HYDRO', sizeSelectAnabolicoIsoHydro.value)">Añadir al carrito</button>
+            </div>
+        </article>
+        <!-- MUSCLE PRO -->
+        <article>
+            <h2>MUSCLE PRO</h2>
+            <div class="product-selector">
+                <label for="size-select-muscle-pro">Elegir tamaño:</label>
+                <select id="size-select-muscle-pro">
+                    <option value="560">2500gr - 560bs</option>
+                </select>
+                <button onclick="addToCart('MUSCLE PRO', sizeSelectMusclePro.value)">Añadir al carrito</button>
+            </div>
+        </article>
+        <!-- CLEAN ZERO -->
+        <article>
+            <h2>CLEAN ZERO</h2>
+            <div class="product-selector">
+                <label for="size-select-clean-zero">Elegir tamaño:</label>
+                <select id="size-select-clean-zero">
+                    <option value="370">900gr - 370bs</option>
+                </select>
+                <button onclick="addToCart('CLEAN ZERO', sizeSelectCleanZero.value)">Añadir al carrito</button>
+            </div>
+        </article>
+        <!-- PROTEIN DELITE SHAKE -->
+        <article>
+            <h2>PROTEIN DELITE SHAKE</h2>
+            <div class="product-selector">
+                <label for="size-select-protein-delite-shake">Elegir tamaño:</label>
+                <select id="size-select-protein-delite-shake">
+                    <option value="270">700gr - 270bs</option>
+                    <option value="12">30gr - 12bs</option>
+                </select>
+                <button onclick="addToCart('PROTEIN DELITE SHAKE', sizeSelectProteinDeliteShake.value)">Añadir al carrito</button>
+            </div>
+        </article>
+        <!-- Continúa agregando más productos en este formato -->
     </main>
     <footer>
         <p>© 2024 NUTRIPRO. Todos los derechos reservados.</p>
     </footer>
     <script>
-        let selectedProduct = "";
-        let selectedPrice = "";
-
-        function updateProduct(value) {
-            const [price, image] = value.split('|');
-            document.getElementById('price-display').innerText = 'Precio: ' + price + 'bs';
-            document.getElementById('product-image').src = image;
-            selectedProduct = document.querySelector('#size-select option:checked').textContent;
-            selectedPrice = price;
-            document.getElementById('whatsapp-button').style.display = 'inline-block';
+        function addToCart(productName, price) {
+            alert('Añadido al carrito: ' + productName + ' por Bs ' + price);
         }
-
-        function addToCart() {
-            alert('Producto añadido al carrito');
-        }
-
-        function sendWhatsAppOrder() {
-            const productName = document.querySelector('h2').textContent;
-            const message = encodeURIComponent(`Hola, quiero comprar ${selectedProduct} de ${productName}. Precio: ${selectedPrice}bs.`);
-            const whatsappUrl = `https://wa.me/59172645173?text=${message}`;
-            window.open(whatsappUrl, '_blank');
-        }
+        const sizeSelectWheyPure = document.getElementById('size-select-whey-pure');
+        const sizeSelectIsoTripleZero = document.getElementById('size-select-iso-triple-zero');
+        const sizeSelectWhey100Isolate = document.getElementById('size-select-whey-100-isolate');
+        const sizeSelectNutriWheyProtein = document.getElementById('size-select-nutri-whey-protein');
+        const sizeSelectAnabolicoIsoHydro = document.getElementById('size-select-anabolico-iso-hydro');
+        const sizeSelectMusclePro = document.getElementById('size-select-muscle-pro');
+        const sizeSelectCleanZero = document.getElementById('size-select-clean-zero');
+        const sizeSelectProteinDeliteShake = document.getElementById('size-select-protein-delite-shake');
+        // Agrega aquí más referencias a los selectores de otros productos según lo agregues
     </script>
 </body>
 </html>
