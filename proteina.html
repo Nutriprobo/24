@@ -63,9 +63,19 @@
         .product-selector {
             margin-top: 20px;
         }
-        .product-selector label, .product-selector select {
+        .product-selector label, .product-selector select, button {
             font-size: 16px;
             padding: 5px 10px;
+        }
+        button {
+            margin-top: 10px;
+            background-color: #0275d8;
+            color: white;
+            border: none;
+            cursor: pointer;
+        }
+        button:hover {
+            background-color: #025aa5;
         }
     </style>
 </head>
@@ -82,7 +92,7 @@
         <article>
             <h2>Proteína Whey</h2>
             <img src="wyp2350.PNG" id="product-image" alt="Imagen del producto">
-            <p>100% WHEY PROFESSIONAL. Óptimo para potenciar la recuperación muscular y promover el crecimiento de masa </p>
+            <p>100% WHEY PROFESSIONAL. Óptimo para potenciar la recuperación muscular y promover el crecimiento de masa magra.</p>
             <div class="product-selector">
                 <label for="size-select">Elegir tamaño:</label>
                 <select id="size-select" onchange="updateProduct(this.value)">
@@ -93,7 +103,9 @@
                     <option value="630|wyp2350.PNG">2350gr - 630bs</option>
                     <option value="1200|wyp5000.PNG">5000gr - 1200bs</option>
                 </select>
+                <button onclick="addToCart()">Añadir al carrito</button>
                 <p id="price-display">Precio: </p>
+                <button id="whatsapp-button" style="display:none;" onclick="sendWhatsAppOrder()">Pedido WhatsApp</button>
             </div>
         </article>
         <!-- Añadir más productos según sea necesario -->
@@ -102,10 +114,24 @@
         <p>© 2024 NUTRIPRO. Todos los derechos reservados.</p>
     </footer>
     <script>
+        let selectedProduct = "";
+
         function updateProduct(value) {
             const [price, image] = value.split('|');
             document.getElementById('price-display').innerText = 'Precio: ' + price + 'bs';
             document.getElementById('product-image').src = image;
+            selectedProduct = document.querySelector('#size-select option:checked').textContent;
+            document.getElementById('whatsapp-button').style.display = 'block';
+        }
+
+        function addToCart() {
+            alert('Producto añadido al carrito');
+        }
+
+        function sendWhatsAppOrder() {
+            const message = encodeURIComponent(`Hola, quiero este producto: ${selectedProduct}`);
+            const whatsappUrl = `https://wa.me/59172645173?text=${message}`;
+            window.open(whatsappUrl, '_blank');
         }
     </script>
 </body>
