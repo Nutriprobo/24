@@ -20,6 +20,7 @@
             justify-content: center;
             align-items: center;
             flex-direction: column;
+            overflow: hidden; /* Asegura que la imagen no desborde el contenedor */
         }
         nav ul {
             list-style-type: none;
@@ -57,17 +58,16 @@
             width: 100%;
         }
         img.logo {
-            max-width: 150%; /* Hacer que la imagen del logo se ajuste automáticamente al tamaño del contenedor */
-            max-height: 300px; /* Ajusta esto según el tamaño deseado para tu logo */
-            margin-bottom: 5px; /* Añadir margen inferior para separar el logo del título */
-            animation: rotate 10s infinite linear; /* Añadir animación de rotación */
+            max-width: 100px; /* Ajuste del tamaño para la animación */
+            max-height: 100px; /* Control del tamaño máximo */
+            animation: slide 5s infinite alternate linear; /* Animación de deslizamiento */
         }
-        @keyframes rotate {
-            from {
-                transform: rotate(0deg);
+        @keyframes slide {
+            0% {
+                transform: translateX(0); /* Comienza en la posición original */
             }
-            to {
-                transform: rotate(360deg);
+            100% {
+                transform: translateX(100%); /* Mueve la imagen hacia la derecha */
             }
         }
     </style>
