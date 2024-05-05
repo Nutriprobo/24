@@ -60,6 +60,15 @@
             max-width: 150%; /* Hacer que la imagen del logo se ajuste automáticamente al tamaño del contenedor */
             max-height: 300px; /* Ajusta esto según el tamaño deseado para tu logo */
             margin-bottom: 5px; /* Añadir margen inferior para separar el logo del título */
+            animation: rotate 10s infinite linear; /* Añadir animación de rotación */
+        }
+        @keyframes rotate {
+            from {
+                transform: rotate(0deg);
+            }
+            to {
+                transform: rotate(360deg);
+            }
         }
     </style>
 </head>
