@@ -1,0 +1,96 @@
+/* Estilos básicos para todo el cuerpo del documento */
+body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    background-color: #f0f0f0;
+    color: #333;
+}
+
+/* Estilos para el encabezado */
+header {
+    background-color: #004d99;
+    color: white;
+    padding: 20px;
+    text-align: center;
+}
+
+/* Estilos para la navegación */
+nav {
+    background-color: #333;
+    color: white;
+    text-align: center;
+    padding: 0;
+}
+
+/* Mensaje antes de la lista de navegación */
+nav p {
+    margin: 0;
+    padding: 10px 20px;
+    background-color: #1177cc; /* Azul más claro para destacar el mensaje */
+    color: white;
+}
+
+/* Estilos para la lista de navegación */
+nav ul {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+}
+
+/* Estilos para cada elemento de la lista de navegación */
+nav ul li {
+    display: inline-block;
+    margin-right: 5px; /* Pequeño margen derecho para separar los elementos */
+}
+
+/* Estilos para los enlaces dentro de los elementos de la lista */
+nav ul li a {
+    color: white;
+    padding: 14px 16px;
+    text-decoration: none;
+    display: block;
+}
+
+/* Estilo para los enlaces al pasar el mouse */
+nav ul li a:hover {
+    background-color: #1177cc;
+}
+
+/* Estilos principales para la sección de contenido */
+main {
+    padding: 20px;
+    background-color: white;
+    margin: 15px;
+    box-shadow: 0 0 10px rgba(0,0,0,0.1);
+}
+
+/* Estilos para el pie de página */
+footer {
+    text-align: center;
+    padding: 10px 0;
+    background-color: #333;
+    color: white;
+    position: fixed;
+    bottom: 0;
+    width: 100%;
+}
+
+/* Estilos para las imágenes dentro del encabezado y el contenido principal */
+.logo, .brand-image {
+    max-width: 100%;
+    height: auto;
+    display: block;
+    margin: 10px auto;
+}
+
+/* Media queries para adaptar la navegación en dispositivos más pequeños */
+@media (max-width: 768px) {
+    nav ul li {
+        display: block; /* Hace que cada elemento de la lista se muestre en una nueva línea */
+        margin-right: 0; /* Elimina el margen derecho en dispositivos pequeños */
+    }
+    nav ul li a {
+        padding: 10px; /* Padding más pequeño para los enlaces en dispositivos pequeños */
+        text-align: center; /* Asegura que el texto esté centrado */
+    }
+}
