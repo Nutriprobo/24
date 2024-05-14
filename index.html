@@ -10,62 +10,65 @@
             margin: 0;
             background-color: #f0f0f0;
             color: #333;
+            line-height: 1.6;
         }
         header {
             background-color: #004d99; /* Azul oscuro */
             color: white;
-            padding: 10px 20px;
+            padding: 20px;
             text-align: center;
-            display: flex;
-            justify-content: center;
-            align-items: center;
-            flex-direction: column;
         }
-        nav ul {
-            list-style-type: none;
-            padding: 0;
-            margin: 0;
-            overflow: hidden;
+        header img.logo {
+            max-width: 100%;
+            height: auto;
+            margin-bottom: 10px;
+        }
+        nav {
             background-color: #333;
         }
+        nav ul {
+            list-style: none;
+            padding: 0;
+            margin: 0;
+            display: flex;
+            justify-content: center;
+        }
         nav ul li {
-            float: left;
+            margin: 0;
         }
         nav ul li a {
             display: block;
+            padding: 14px 20px;
             color: white;
-            text-align: center;
-            padding: 14px 16px;
             text-decoration: none;
+            text-align: center;
         }
         nav ul li a:hover {
             background-color: #1177cc; /* Azul más claro para hover */
         }
         main {
             padding: 20px;
-            background: white;
             margin: 15px;
-            box-shadow: 0 0 10px rgba(0,0,0,0.1); /* Sombra ligera para resaltar el contenido principal */
+            background: white;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1); /* Sombra ligera para resaltar el contenido principal */
         }
         footer {
             text-align: center;
-            padding: 10px 0;
+            padding: 10px 20px;
             background-color: #333;
             color: white;
             position: fixed;
             bottom: 0;
             width: 100%;
         }
-        img.logo {
-            max-width: 150%; /* Hacer que la imagen del logo se ajuste automáticamente al tamaño del contenedor */
-            max-height: 300px; /* Ajusta esto según el tamaño deseado para tu logo */
-            margin-bottom: 5px; /* Añadir margen inferior para separar el logo del título */
+        h1, h2.slogan {
+            margin: 0;
         }
         h2.slogan {
-            margin-top: 0; /* Eliminar el margen superior para acercarlo al título */
-            font-size: 24px; /* Tamaño del eslogan */
-            font-weight: normal; /* Peso de la fuente del eslogan */
+            font-size: 24px;
+            font-weight: normal;
             color: #ffcc00; /* Color vibrante para el eslogan */
+            margin-top: 5px;
         }
     </style>
 </head>
@@ -73,7 +76,7 @@
     <header>
         <img src="NUTRILOG.jpg" alt="Logo de NUTRIPRO" class="logo">
         <h1>NUTR⚡PRO</h1>
-        <h2 class="slogan">Energía que se Siente, Resultados que se Ven</h2> <!-- Eslogan agregado aquí -->
+        <h2 class="slogan">Energía que se Siente, Resultados que se Ven</h2>
     </header>
     <nav>
         <ul>
