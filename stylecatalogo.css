@@ -1,0 +1,89 @@
+/* Estilos Generales */
+body {
+    font-family: 'Arial', sans-serif;
+    margin: 0;
+    background-color: #f4f4f8; /* Fondo más claro y neutro */
+    color: #333;
+}
+
+/* Encabezado */
+header {
+    background-color: #0056b3; /* Azul más intenso */
+    color: white;
+    padding: 20px 10px;
+    text-align: center;
+    position: relative; /* Posición relativa para posicionar elementos internos */
+}
+
+/* Botón de inicio en el header */
+.home-button {
+    position: absolute;
+    top: 50%;
+    right: 20px;
+    transform: translateY(-50%);
+    background-color: yellow;
+    border: 2px solid yellow;
+    padding: 5px 10px;
+    color: black;
+    border-radius: 5px;
+    text-decoration: none;
+    font-weight: bold;
+}
+
+/* Main y artículos */
+main {
+    padding: 10px;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-around;
+}
+
+article {
+    width: calc(33.333% - 40px); /* Ajusta el ancho de cada artículo */
+    margin: 20px;
+    background-color: #ffffff;
+    padding: 15px;
+    box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+    border-radius: 10px; /* Bordes redondeados */
+    transition: transform 0.3s ease-in-out; /* Transición suave para el hover */
+}
+
+article:hover {
+    transform: translateY(-5px); /* Efecto de elevación al pasar el mouse */
+}
+
+img {
+    width: 100%; /* Imágenes ajustadas al contenedor */
+    height: auto;
+    border-radius: 5px; /* Bordes redondeados para las imágenes */
+}
+
+a {
+    color: #0275d8;
+    text-decoration: none;
+    font-size: 18px;
+    transition: color 0.2s ease-in-out; /* Transición de color suave */
+}
+
+a:hover {
+    text-decoration: underline;
+    color: #0056b3; /* Cambio de color al pasar el mouse */
+}
+
+/* Responsive Design */
+@media (max-width: 1024px) {
+    article {
+        width: calc(50% - 40px); /* Ajustar el ancho para tabletas */
+    }
+}
+
+@media (max-width: 768px) {
+    article {
+        width: calc(100% - 40px); /* Ajustar el ancho para móviles */
+    }
+
+    .home-button {
+        top: 20px;
+        right: 10px;
+    }
+}
