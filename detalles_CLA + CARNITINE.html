@@ -78,43 +78,48 @@
 <body>
 <header>
     <div style="display: inline-block; width: 370px;"> <!-- Aumenta el ancho del contenedor para ajustar todo -->
-        <a href="termogenicos.html" class="home-button" style="width: 160px;">Proteinas</a>
+        <a href="termogenicos.html" class="home-button" style="width: 160px;">Termogenicos</a>
     </div>
     <h1>Albumix</h1>
 </header>
-    <main>
-        <div class="product-info">
-            <img src="CLA + CARNITINE300gr.PNG" id="product-image" alt="CLA + CARNITINE">
-            <div class="product-selector">
-                <label for="size-select" style="color: black; font-weight: bold;">Elegir tamaño:</label>
-                <select id="size-select" onchange="updateProduct(this)">
-                    <option value="300|300|CLA + CARNITINE300gr.PNG">300gr - 300bs. </option>
-                    
-                </select>
-                <button onclick="addToCart()">Añadir al carrito</button>
-                <button id="whatsapp-button" onclick="sendWhatsAppOrder()">Pedir por WhatsApp</button>
-            </div>
+<main>
+    <div class="product-info">
+        <img src="CLA + CARNITINE300gr.PNG" id="product-image" alt="CLA + CARNITINE">
+        <div class="product-selector">
+            <label for="size-select" style="color: black; font-weight: bold;">Elegir tamaño:</label>
+            <select id="size-select" onchange="updateProduct(this)">
+                <option value="300gr|300|CLA + CARNITINE300gr.PNG">300gr - 300bs.</option>
+            </select>
+            <button onclick="addToCart()">Añadir al carrito</button>
+            <button id="whatsapp-button" onclick="sendWhatsAppOrder()">Pedir por WhatsApp</button>
         </div>
-    </main>
-    <footer>
-        <p>© 2024 NUTRIPRO. Todos los derechos reservados.</p>
-    </footer>
-    <script>
-        function updateProduct(select) {
-            const [size, price, image] = select.value.split('|');
-            document.getElementById('product-image').src = image;
-            document.getElementById('whatsapp-button').setAttribute('data-message', `Quiero el producto 100% WHEY PROFESSIONAL, Tamaño: ${size}, Precio: ${price}bs`);
-        }
+    </div>
+</main>
+<footer>
+    <p>© 2024 NUTRIPRO. Todos los derechos reservados.</p>
+</footer>
+<script>
+    function updateProduct(select) {
+        const [size, price, image] = select.value.split('|');
+        document.getElementById('product-image').src = image;
+        document.getElementById('whatsapp-button').setAttribute('data-message', `Quiero el producto CLA + CARNITINE, Tamaño: ${size}, Precio: ${price}bs`);
+    }
 
-        function addToCart() {
-            alert('Producto añadido al carrito');
-        }
+    function addToCart() {
+        alert('Producto añadido al carrito');
+    }
 
-        function sendWhatsAppOrder() {
-            const message = document.getElementById('whatsapp-button').getAttribute('data-message');
-            const whatsappUrl = `https://wa.me/59172645173?text=${encodeURIComponent(message)}`;
-            window.open(whatsappUrl, '_blank');
-        }
-    </script>
+    function sendWhatsAppOrder() {
+        const message = document.getElementById('whatsapp-button').getAttribute('data-message');
+        const whatsappUrl = `https://wa.me/59172645173?text=${encodeURIComponent(message)}`;
+        window.open(whatsappUrl, '_blank');
+    }
+
+    // Inicializar el mensaje de WhatsApp al cargar la página
+    document.addEventListener('DOMContentLoaded', () => {
+        const select = document.getElementById('size-select');
+        updateProduct(select);
+    });
+</script>
 </body>
 </html>
