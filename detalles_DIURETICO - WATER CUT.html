@@ -1,0 +1,125 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Detalles de DIURETICO - WATER CUT | NUTRIPRO</title>
+    <style>
+        body {
+            font-family: 'Arial', sans-serif;
+            margin: 0;
+            background: linear-gradient(to right, #6a11cb, #2575fc);
+            color: #fff;
+        }
+        header {
+            background-color: rgba(2, 117, 216, 0.8);
+            color: white;
+            padding: 10px 20px;
+            text-align: center;
+            position: relative; /* Para posicionar los botones de navegación */
+        }
+        header a {
+            color: white;
+            text-decoration: none;
+            padding: 8px 15px;
+            background-color: #025aa5;
+            border-radius: 5px;
+            position: absolute;
+            top: 10px;
+        }
+        header a.back-button {
+            left: 10px;
+        }
+        header a.home-button {
+            right: 10px;
+        }
+        main {
+            padding: 20px;
+            margin: 10px 30px;
+            background-color: rgba(255, 255, 255, 0.8);
+            border-radius: 8px;
+        }
+        img {
+            max-width: 300px; /* Aumentado de 200px a 300px */
+            height: auto;
+            display: block;
+            margin: 20px auto;
+        }
+        .product-info {
+            text-align: center;
+        }
+        .product-selector label, .product-selector select {
+            font-size: 16px;
+            padding: 5px 10px;
+            margin: 5px;
+            background-color: #f8f9fa;
+            border-radius: 5px;
+            border: 1px solid #ccc;
+        }
+        button {
+            margin-top: 10px;
+            background-color: #0275d8;
+            color: white;
+            border: none;
+            cursor: pointer;
+            padding: 10px 20px;
+            display: block;
+            width: 100%;
+            border-radius: 5px;
+        }
+        button:hover {
+            opacity: 0.8;
+        }
+        #whatsapp-button {
+            background-color: #25d366; /* Color verde de WhatsApp */
+        }
+    </style>
+</head>
+<body>
+<header>
+    <div style="display: inline-block; width: 370px;"> <!-- Aumenta el ancho del contenedor para ajustar todo -->
+        <a href="termogenicos.html" class="home-button" style="width: 160px;">Termogenicos</a>
+    </div>
+    <h1>DIURETICO - WATER CUT</h1>
+</header>
+<main>
+    <div class="product-info">
+        <img src="DIURETICO - WATER CUT_120cps.PNG" id="product-image" alt="DIURETICO - WATER CUT">
+        <div class="product-selector">
+            <label for="size-select" style="color: black; font-weight: bold;">Elegir tamaño:</label>
+            <select id="size-select" onchange="updateProduct(this)">
+                <option value="120cps|180|DIURETICO - WATER CUT_120cps.PNG">120cps - 180bs.</option>
+            </select>
+            <button onclick="addToCart()">Añadir al carrito</button>
+            <button id="whatsapp-button" onclick="sendWhatsAppOrder()">Pedir por WhatsApp</button>
+        </div>
+    </div>
+</main>
+<footer>
+    <p>© 2024 NUTRIPRO. Todos los derechos reservados.</p>
+</footer>
+<script>
+    function updateProduct(select) {
+        const [size, price, image] = select.value.split('|');
+        document.getElementById('product-image').src = image;
+        document.getElementById('whatsapp-button').setAttribute('data-message', `Quiero el producto CLA + CARNITINE, Tamaño: ${size}, Precio: ${price}bs`);
+    }
+
+    function addToCart() {
+        alert('Producto añadido al carrito');
+    }
+
+    function sendWhatsAppOrder() {
+        const message = document.getElementById('whatsapp-button').getAttribute('data-message');
+        const whatsappUrl = `https://wa.me/59172645173?text=${encodeURIComponent(message)}`;
+        window.open(whatsappUrl, '_blank');
+    }
+
+    // Inicializar el mensaje de WhatsApp al cargar la página
+    document.addEventListener('DOMContentLoaded', () => {
+        const select = document.getElementById('size-select');
+        updateProduct(select);
+    });
+</script>
+</body>
+</html>
